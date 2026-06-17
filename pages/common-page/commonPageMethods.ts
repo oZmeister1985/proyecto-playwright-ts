@@ -1,5 +1,6 @@
-import { expect, Page } from '@playwright/test'
+import { Page } from '@playwright/test'
 import { CommonPageElements } from './commonPageElements';
+
 export class CommonPageMethods{
     private page: Page;
     private commonPageElements: CommonPageElements;
