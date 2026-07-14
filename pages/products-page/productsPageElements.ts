@@ -9,13 +9,17 @@ export class ProductsPageElements{
     get icons(){
         return{
           cart: this.page.locator('#shopping_cart_container'),
-          facebookIcon: this.page.locator('.social_facebook')
+          twitterIcon: this.page.locator('.social_twitter'),
+          facebookIcon: this.page.locator('.social_facebook'),
+          linkedinIcon: this.page.locator('.social_linkedin')
+
         }
     }
 
     get buttons(){
         return{
-            addToCart: this.page.locator('#add-to-cart-sauce-labs-onesie'),
+            addToCartOnesie: this.page.locator('#add-to-cart-sauce-labs-onesie'),
+            addToCartBackpack: this.page.locator('#add-to-cart-sauce-labs-backpack')
             }
         }
     }

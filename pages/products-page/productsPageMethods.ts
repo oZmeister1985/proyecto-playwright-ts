@@ -3,15 +3,23 @@ import { ProductsPageElements } from './productsPageElements';
 
 export class ProductsPageMethods{
     private page: Page;
-    private productsPage: ProductsPageElements;
+    private productsPageElements: ProductsPageElements;
 
     constructor(page: Page){
         this.page = page;
-        this.productsPage = new ProductsPageElements(page);
+        this.productsPageElements = new ProductsPageElements(page);
     }
 
-async addToCart(){
-    await this.productsPage.buttons.addToCart.click();
+async clickAddToCartBackpack(){
+    await this.productsPageElements.buttons.addToCartBackpack.click();
+}
+
+async clickAddToCartOnesie(){
+    await this.productsPageElements.buttons.addToCartOnesie.click();
+}
+
+async clickOnCartIcon(){
+    await this.productsPageElements.icons.cart.click();
 }
 
 }
