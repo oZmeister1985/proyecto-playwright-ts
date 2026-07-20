@@ -4,6 +4,7 @@ import { CommonPageMethods } from '../pages/common-page/commonPageMethods';
 import { LoginPageData } from '../pages/login-page/loginPageData';
 import { ProductsPageMethods } from '../pages/products-page/productsPageMethods';
 import { CartPageMethods } from '../pages/cart-page/cartPageMethods';
+import { CheckoutPageMethods } from '../pages/checkout-page/checkoutPageMethods';
 
 const userCredentials = LoginPageData.credentials;
 
@@ -12,6 +13,7 @@ test('login', async ({ page }) => {
     const loginPageMethods = new LoginPageMethods(page);
     const productsPageMethods = new ProductsPageMethods(page);
     const cartPageMethods = new CartPageMethods(page);
+    const checkoutPageMethods = new CheckoutPageMethods(page);
 
     await commonPageMethods.navigateToTheApplication();
     await loginPageMethods.insertUsername(userCredentials.usernames.standard_user);
@@ -20,6 +22,9 @@ test('login', async ({ page }) => {
     await productsPageMethods.clickAddToCartBackpack();
     await productsPageMethods.clickAddToCartOnesie();
     await productsPageMethods.clickOnCartIcon();
-    await cartPageMethods.clickContinueShoopingButton();
+    await cartPageMethods.clickCheckoutButton();
+    await checkoutPageMethods.insertFirstName('Ozzy');
+    await checkoutPageMethods.insertLastName('Osbourne');
+    await checkoutPageMethods.insertZipPostalCode('12345');
     await page.pause();
 });

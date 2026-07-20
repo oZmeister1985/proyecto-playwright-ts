@@ -12,15 +12,13 @@ export class ProductsPageElements{
           twitterIcon: this.page.locator('.social_twitter'),
           facebookIcon: this.page.locator('.social_facebook'),
           linkedinIcon: this.page.locator('.social_linkedin')
-
         }
     }
 
     get buttons(){
         return{
-            addToCartOnesie: this.page.locator('#add-to-cart-sauce-labs-onesie'),
-            addToCartBackpack: this.page.locator('#add-to-cart-sauce-labs-backpack')
-            }
+          addToCartOnesie: this.page.locator('#add-to-cart-sauce-labs-onesie'),
+          addToCartBackpack: this.page.locator('#add-to-cart-sauce-labs-backpack')
         }
     }
-    
+    }
